@@ -1,47 +1,3 @@
-schema-codegen-start
-```graphql
-const typeDefs = `
-  type User {
-    id: ID!
-    name: String!
-    email: String!
-  }
-
-  input UserInput {
-    id: ID
-    name: String!
-    email: String!
-  }
-
-  type Post {
-    id: ID!
-    title: String!
-    content: String!
-    author: User!
-  }
-
-  input PostInput {
-    id: ID
-    title: String!
-    content: String!
-    authorId: ID!
-  }
-
-  type Query {
-    getUsers: [User!]!
-    getPosts: [Post!]!
-  }
-
-  type Mutation {
-    addUser(user: UserInput!): User!
-    addPost(post: PostInput!): Post!
-  }
-`;
-```
-schema-codegen-end
-
-resolver-codegen-start
-```javascript
 const users = [
   { id: "1", name: "John Doe", email: "john@example.com" },
   { id: "2", name: "Jane Smith", email: "jane@example.com" }
@@ -72,5 +28,5 @@ const resolvers = {
     }
   }
 };
-```
-resolver-codegen-end
+
+export default resolvers;
